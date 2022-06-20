@@ -4,10 +4,13 @@ using LuckCode.Common.Helper;
 using LuckCode.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.ComponentModel;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-
+using System.Text.Encodings.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 

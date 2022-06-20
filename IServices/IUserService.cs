@@ -12,5 +12,6 @@ namespace LuckCode.IServices
     public interface IUserService: IBaseService<sysuser>
     {
         Task<UserInfo> GetCurrentUserInfo();
+        Task<List<RouteMenu>> GetMenuList();
     }
 }

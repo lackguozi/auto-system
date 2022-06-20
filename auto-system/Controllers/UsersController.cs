@@ -44,7 +44,7 @@ namespace auto_system.Controllers
             if (userInfo.Count > 0)
             {
                 long id = userInfo.FirstOrDefault().ID;
-                token = jwtHelper.GetJWTToken(username, id);
+                token = jwtHelper.GetJWTToken(userInfo.FirstOrDefault());
             }
             return new TokenInfoViewModel()
             {
@@ -58,6 +58,11 @@ namespace auto_system.Controllers
         public async Task<UserInfo> getCurrentUserInfo()
         {
             return await userService.GetCurrentUserInfo();            
+        }
+        [HttpGet]
+        public async Task<List<RouteMenu>> getMenuList()
+        {
+            return await userService.GetMenuList();
         }
         [HttpGet]
         public async Task<int> Add()

@@ -27,6 +27,7 @@ namespace auto_system.Extensions
             CreateMap<SysTaskLog, SysTaskLogDto>().ReverseMap();*/
             CreateMap<sysuser, SysUserDto>().ReverseMap();
             CreateMap<sysuser, UserProfile>();
+            CreateMap<sysmenu, RouteMenu>();
         }
     }
 }

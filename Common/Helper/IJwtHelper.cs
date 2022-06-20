@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LuckCode.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace LuckCode.Common.Helper
 {
     public interface IJwtHelper
     {
-        string GetJWTToken(string name, long id);
+        string GetJWTToken(sysuser user);
     }
 }

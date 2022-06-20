@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using LuckCode.Model;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -18,15 +19,15 @@ namespace LuckCode.Common.Helper
         {
             _JwtTokenOption = jwtTokenOptions.CurrentValue;
         }
-        public string GetJWTToken(string name ,long id)
+        public string GetJWTToken(sysuser user)
         {
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, id.ToString()),
-                
-                new Claim(ClaimTypes.Name, name),
-                new Claim("TestName", name)  ,              
-                new Claim(ClaimTypes.Role, "admin"),
+                new Claim(JwtRegisteredClaimNames.Sub, user.ID.ToString()),
+
+                new Claim(ClaimTypes.Name, user.Name),
+                new Claim(ClaimTypes.NameIdentifier,user.Account),             
+                new Claim(ClaimTypes.Role, user.RoleId),
             };
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_JwtTokenOption.SecurityKey));
             SigningCredentials creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

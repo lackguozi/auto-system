@@ -15,7 +15,12 @@ namespace LuckCode.Repository
         public MenuRepository(ISqlSugarClient sqlSugarClient) : base(sqlSugarClient)
         {
         }
-
+        /// <summary>
+        /// 根据角色查找用户左侧权限目录
+        /// </summary>
+        /// <param name="roleIds"></param>
+        /// <param name="enabledOnly"></param>
+        /// <returns></returns>
         public async Task<List<sysmenu>> GetMenusByRoleIds(long[] roleIds, bool enabledOnly)
         {
             
