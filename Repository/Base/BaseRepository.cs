@@ -69,5 +69,13 @@ namespace LuckCode.Repository.Base
         {
             return await _db.Updateable(entity).Where(strWhere).ExecuteCommandHasChangeAsync();
         }
+        /// <summary>
+        /// 查询所有数据
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<TEntity>> Query()
+        {
+            return await _db.Queryable<TEntity>().ToListAsync();
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace LuckCode.IRepository.Base
         Task<TEntity> QueryByID(object objId);
         Task<TEntity> QueryByID(object objId, bool blnUseCache = false);
         Task<List<TEntity>> QueryByIDs<T>(T[] lstIds);
-
+        Task<List<TEntity>> Query();
         Task<int> Add(TEntity model);
 
         Task<bool> DeleteById(object id);

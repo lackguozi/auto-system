@@ -20,9 +20,10 @@ namespace LuckCode.IServices.Base
         Task<bool> Delete(TEntity model);
 
         Task<bool> DeleteByIds(object[] ids);
-
+       
         Task<bool> Update(TEntity model);
         Task<bool> Update(TEntity entity, string strWhere);
         Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereExpression);
+        Task<List<TEntity>> Query();
     }
 }

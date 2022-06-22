@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace LuckCode.Services
 {
-    public class DepartmentSevice : BaseService<department>, IDepartmentService
+    public class DepartmentSevice : BaseService<department>
     {
         //private readonly IDepartmentRepository departRepository;
 

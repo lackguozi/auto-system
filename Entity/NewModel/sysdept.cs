@@ -12,7 +12,7 @@ namespace LuckCode.Model
         /// <summary>
         /// 
         /// </summary>
-        [SugarColumn(IsPrimaryKey = true)]
+        [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public long? ID { get; set; }
 
         /// <summary>

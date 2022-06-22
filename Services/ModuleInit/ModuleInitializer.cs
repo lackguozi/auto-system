@@ -20,6 +20,7 @@ namespace LuckCode.Services.ModuleInit
             services.AddTransient(typeof(IBaseService<>), typeof(BaseService<>));
             //services.AddTransient<IDepartmentService,DepartmentSevice>();
             services.AddTransient<IUserService,UserService>();
+            services.AddTransient<IDeptService,DeptService>();
         }
     }
 }

@@ -28,6 +28,8 @@ namespace auto_system.Extensions
             CreateMap<sysuser, SysUserDto>().ReverseMap();
             CreateMap<sysuser, UserProfile>();
             CreateMap<sysmenu, RouteMenu>();
+            CreateMap<sysdept, SysDeptDto>().ReverseMap();
+            CreateMap<sysdept, DeptNode>();
         }
     }
 }

@@ -66,5 +66,10 @@ namespace LuckCode.Services.Base
         {
             return await baseRepository.Query(whereExpression);
         }
+
+        public async Task<List<TEntity>> Query()
+        {
+            return await baseRepository.Query();
+        }
     }
 }
