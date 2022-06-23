@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace LuckCode.Model.Dto
 {
-    public class SysUserDto:BaseDto<long>
+    public class SysUserDto:BaseDto
     {
+		/// <summary>
+		/// id 
+		/// </summary>
+		public long? ID { get; set; }
 		/// <summary>
 		/// 账户
 		/// </summary>

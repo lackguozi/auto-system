@@ -12,5 +12,7 @@ namespace LuckCode.IServices
     public interface IDeptService: IBaseService<sysdept>
     {
         Task<List<DeptNode>> GetDeptList();
+        Task<List<DeptNode>> GetParDeptList();
+        Task<bool> AddDept(SysDeptDto deptNode);
     }
 }

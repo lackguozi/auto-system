@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace LuckCode.Model.Dto
 {
-    public class BaseDto<T>
+    public class BaseDto
     {
 		/// <summary>
 		/// 主键ID
 		/// </summary>
-		public T ID { get; set; }
+		//public T ID { get; set; }
 
 		/// <summary>
 		/// 创建人

@@ -20,5 +20,20 @@ namespace auto_system.Controllers
         {
             return await deptService.GetDeptList();
         }
+        [HttpGet("parlist")]
+        public async Task<List<DeptNode>> GetParDeptList()
+        {
+            return await deptService.GetParDeptList();
+        }
+        [HttpPost("add")]
+        public async Task<bool> Add(SysDeptDto node)
+        {
+            return await deptService.AddDept(node) ;
+        }
+        [HttpPost("addtest")]
+        public bool Add1(SysDeptDto node)
+        {
+            return true;
+        }
     }
 }

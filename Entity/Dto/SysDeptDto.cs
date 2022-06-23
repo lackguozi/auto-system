@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LuckCode.Model.Dto
 {
-    public class SysDeptDto : BaseDto<long>
+    public class SysDeptDto : BaseDto
     {
+		public long? ID { get; set; }
 		/// <summary>
 		/// 部门全称
 		/// </summary>

@@ -43,7 +43,7 @@ namespace auto_system.Controllers
             
             if (userInfo.Count > 0)
             {
-                long id = userInfo.FirstOrDefault().ID;
+                //long? id = userInfo.FirstOrDefault().ID;
                 token = jwtHelper.GetJWTToken(userInfo.FirstOrDefault());
             }
             return new TokenInfoViewModel()
@@ -73,6 +73,11 @@ namespace auto_system.Controllers
                  Account="lisi",
                  Password= "E10ADC3949BA59ABBE56E057F20F883E",
              });
+        }
+        [HttpPost]
+        public async Task<int> AddTest(sysuser user)
+        {
+            return await userService.Add(user);
         }
     }
     public class TokenInfoViewModel
