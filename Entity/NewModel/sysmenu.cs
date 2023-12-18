@@ -58,12 +58,12 @@ namespace LuckCode.Model
         /// <summary>
         /// 是否是菜单1:菜单,0:按钮
         /// </summary>
-        public Boolean? IsMenu { get; set; }
+        public bool? IsMenu { get; set; }
 
         /// <summary>
         /// 是否默认打开1:是,0:否
         /// </summary>
-        public Boolean? IsOpen { get; set; }
+        public bool? IsOpen { get; set; }
 
         /// <summary>
         /// 级别
