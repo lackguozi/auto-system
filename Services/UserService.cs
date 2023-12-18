@@ -100,13 +100,14 @@ namespace LuckCode.Services
                 foreach(var pair in dictNodes.OrderBy(x => x.Value.Num))
                 {
                     var currNode = pair.Value;
+                    //如果找到了父级菜单，那么加入父级菜单的子菜单
                     if(currNode.ParentId.HasValue && dictNodes.ContainsKey(currNode.ParentId.Value))
                     {
                         dictNodes[currNode.ParentId.Value].Children.Add(currNode);
-
                     }
                     else
                     {
+                        //一定是最上面的菜单，前提是维护的菜单数据是完整的
                         menuList.Add(currNode);
                     }
                 }
