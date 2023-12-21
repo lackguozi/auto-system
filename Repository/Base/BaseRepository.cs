@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,13 +12,31 @@ namespace LuckCode.Repository.Base
 {
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, new()
     {
-        public BaseRepository(ISqlSugarClient sqlSugarClient)
+        public BaseRepository(IUnitOfWorkManger unitOfWorkManger)
         {
-            _db = sqlSugarClient;
+            _dbBase = unitOfWorkManger.GetDbClient();
+            this.unitOfWorkManger = unitOfWorkManger;
         }
 
-        private readonly ISqlSugarClient _db;
-        protected ISqlSugarClient DbContext()
+        private readonly SqlSugarScope _dbBase;
+        private readonly IUnitOfWorkManger unitOfWorkManger;
+
+        private ISqlSugarClient _db
+        {
+            get
+            {
+                ISqlSugarClient client = _dbBase;
+                //如果实体类有租户属性，则换连接 
+                var typeAtt = typeof(TEntity).GetCustomAttribute<TenantAttribute>();
+                if(typeAtt != null)
+                {
+                    client = _dbBase.AsTenant().GetConnectionScope(typeAtt.configId.ToString().ToLower());
+                }
+                return client;
+            }
+
+        }
+        public ISqlSugarClient DbContext()
         {
             return _db;
         }

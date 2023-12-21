@@ -17,8 +17,11 @@ namespace LuckCode.Repository.ModuleInit
     {
         public void ConfigurationServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient(typeof( IBaseRepository<>), typeof(BaseRepository<>));
+            //工作单元 
+            services.AddSingleton<IUnitOfWorkManger,UnitOfWorkManager>();
+            services.AddScoped(typeof( IBaseRepository<>), typeof(BaseRepository<>));
             services.AddTransient<IMenuRepository, MenuRepository>();
+
             //services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
         }
     }

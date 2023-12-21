@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LuckCode.Repository.UnitOfWork
+namespace LuckCode.Repository
 {
     public interface IUnitOfWorkManger
     {

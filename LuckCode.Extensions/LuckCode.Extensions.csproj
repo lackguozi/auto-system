@@ -15,5 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\LuckCode.Common.csproj" />
   </ItemGroup>
-
+ <ItemGroup>
+	 <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+ </ItemGroup>
 </Project>

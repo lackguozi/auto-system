@@ -12,8 +12,11 @@ namespace LuckCode.Repository
 {
     public class MenuRepository : BaseRepository<sysmenu>, IMenuRepository
     {
-        public MenuRepository(ISqlSugarClient sqlSugarClient) : base(sqlSugarClient)
+        private readonly IUnitOfWorkManger unitOfWorkManger;
+
+        public MenuRepository(IUnitOfWorkManger unitOfWorkManger) : base(unitOfWorkManger)
         {
+            this.unitOfWorkManger = unitOfWorkManger;
         }
         /// <summary>
         /// 根据角色查找用户左侧权限目录
