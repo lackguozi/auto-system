@@ -5,7 +5,6 @@ using LuckCode.Model.Dto;
 using LuckCode.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TokenDemo.Util.Response.Entity;
 
 namespace auto_system.Controllers
 {

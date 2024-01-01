@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="User\" />
-    <Folder Include="Response\" />
     <Folder Include="Request\" />
   </ItemGroup>
 

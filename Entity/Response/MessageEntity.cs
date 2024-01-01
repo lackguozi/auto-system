@@ -1,4 +1,4 @@
-﻿namespace TokenDemo.Util.Response.Entity
+﻿namespace LuckCode.Model
 {
     public class MessageEntity<T>
     {
