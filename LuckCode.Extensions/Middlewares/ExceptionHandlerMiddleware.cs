@@ -1,12 +1,12 @@
 ﻿using LuckCode.Model;
 using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices.Protocols;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace LuckCode.Extensions
@@ -56,7 +56,7 @@ namespace LuckCode.Extensions
             }
             context.Response.ContentType = "application/json";
             await context.Response
-                .WriteAsync(JsonConvert.SerializeObject(new ApiResponse(StatusCode.CODE500, message).MessageModel))
+                .WriteAsync(JsonSerializer.Serialize(new ApiResponse(StatusCode.CODE500, message).MessageModel))
                 .ConfigureAwait(false);
         }
     }
